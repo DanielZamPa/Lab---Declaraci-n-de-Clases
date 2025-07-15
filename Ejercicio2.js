@@ -5,28 +5,30 @@ class Empleado {
     this.salarioBase = salarioBase;
   }
   calcularSalario() {
-    console.log("Metodo de clase calcular salario.");    
+    console.log("Salario: ", this.salarioBase);
   }
 }
 
-class Coche extends Empleado {
+class Gerente extends Empleado {
   constructor(Nombre, edad, salarioBase, bonificacion) {
     super(Nombre, edad, salarioBase); // Llama al constructor de la clase padre
     this.bonificacion = bonificacion;
   }
   calcularSalario() {
-    return this.salarioBase+this.bonificacion  
+    console.log("Gerente");
+    console.log("Salario con bonificación: ", this.salarioBase+this.bonificacion);
   }
 }
-class Moto extends Empleado {
+class Desarrollador extends Empleado {
   constructor(Nombre, edad, salarioBase, lenguaje) {
     super(Nombre, edad, salarioBase); // Llama al constructor de la clase padre
     this.lenguaje = lenguaje;
   }
 }
 // Crear una instancia de la clase
-const Coche1 = new Coche("BYD", "Seagull", 2017, 4);
-const Moto1 = new Moto("Vmoto", "Stash", 2022, 150);
+const Gerente1 = new Gerente("Diego Mahecha", 34, 6000000, 1000000);
+const Desarrollador1 = new Desarrollador("Daniel Zamora", 23, 3000000, "Java");
 
-Coche1.obtenerDetalles();
-Moto1.obtenerDetalles();
+Gerente1.calcularSalario();
+console.log("\nDesarrollador");
+Desarrollador1.calcularSalario();

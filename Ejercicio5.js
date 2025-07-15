@@ -1,40 +1,33 @@
 class Animal {
-  constructor(Nombre, precio, marca) {
+  constructor(Nombre, edad) {
     this.Nombre = Nombre;
-    this.precio = precio;
-    this.marca = marca;
+    this.edad = edad;    
   }
-  descripcion() {
-    console.log("Nombre producto: ", this.Nombre,"\nPrecio: ",this.precio,"\nMarca: ",this.marca);
-  }
+  emitirSonido() {}  
 }
 
-class Telefono extends Animal {
-  constructor(Nombre, precio, marca, almacenamiento, ram) {
-    super(Nombre, precio, marca); // Llama al constructor de la clase padre
-    this.almacenamiento = almacenamiento;
-    this.ram = ram;
+class Perro extends Animal {
+  constructor(Nombre, edad) {
+    super(Nombre, edad); // Llama al constructor de la clase padre
   }
-  descripcion() {
-    console.log("Telefono");    
-    console.log("Nombre producto: ", this.Nombre,"\nPrecio: ",this.precio,"\nMarca: ",this.marca,"\nAlmacenamiento: ",this.almacenamiento, "\nRam: ", this.ram);
+  emitirSonido() {
+    console.log("Perro");    
+    console.log("¡Guau!");
   }
 }
-class Laptop extends Animal {
-  constructor(Nombre, precio, marca, procesador, pulgadas) {
-    super(Nombre, precio, marca); // Llama al constructor de la clase padre
-    this.procesador = procesador;
-    this.pulgadas = pulgadas;
+class Gato extends Animal {
+  constructor(Nombre, edad) {
+    super(Nombre, edad); // Llama al constructor de la clase padre
   }
-  descripcion() {
-    console.log("Laptop");    
-    console.log("Nombre producto: ", this.Nombre,"\nPrecio: ",this.precio,"\nMarca: ",this.marca, "\nProcesador: ",this.procesador,"\nTamaño: ",this.pulgadas);
+  emitirSonido() {
+    console.log("Gato");    
+    console.log("¡Miau!");
   }
 }
 // Crear una instancia de la clase
-const telefono1 = new Telefono("A78", 800000, "OPPO", "128GB", "8 ram");
-const laptop1 = new Laptop("Vivobook", 2500000,"Asus", "Ryzen 5", "14 pulgadas");
+const perro1 = new Perro("Milo", "4 años");
+const gato1 = new Gato("Luna", "6 años");
 
-telefono1.descripcion();
-console.log("\n");
-laptop1.descripcion();
+perro1.emitirSonido();
+console.log("\n")
+gato1.emitirSonido();

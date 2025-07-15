@@ -18,7 +18,7 @@ class Coche extends Vehiculo {
 class Moto extends Vehiculo {
   constructor(marca, modelo, año, cilindrada) {
     super(marca, modelo, año); // Llama al constructor de la clase padre
-    this.numeroPuertas = cilindrada;
+    this.cilindrada = cilindrada;
   }
 }
 // Crear una instancia de la clase
